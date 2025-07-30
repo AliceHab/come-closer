@@ -5,6 +5,7 @@ import {
   useMotionValue,
   useTransform,
   animate,
+  PanInfo,
 } from 'framer-motion'
 
 import { CardT } from '@/entities/Card/model/types'
@@ -70,7 +71,25 @@ export const Card = ({
     back: 'text-gray-700',
   }
 
+  const x = useMotionValue(0)
+  const rotate = useTransform(x, [-200, 200], ['-20deg', '20deg'])
+
   const isTop = position === 0
+
+  const handleDragEnd = (_: unknown, info: PanInfo) => {
+    const offsetX = info.offset.x
+    const threshold = 100
+
+    if (offsetX < -threshold && onSwipeLeft) {
+      onSwipeLeft()
+      x.set(0)
+    } else if (offsetX > threshold && onSwipeRight) {
+      onSwipeRight()
+      x.set(0)
+    } else {
+      animate(x, 0, { type: 'spring', stiffness: 300 })
+    }
+  }
 
   if (!isTop) {
     const offsetDeg = position % 2 === 0 ? -8 : 6
@@ -86,24 +105,6 @@ export const Card = ({
         <ComeCloserLogoBack className={`h-[23%] aspect-square`} />
       </div>
     )
-  }
-
-  const x = useMotionValue(0)
-  const rotate = useTransform(x, [-200, 200], ['-20deg', '20deg'])
-
-  const handleDragEnd = (_: any, info: { offset: { x: number } }) => {
-    const offsetX = info.offset.x
-    const threshold = 100
-
-    if (offsetX < -threshold && onSwipeLeft) {
-      onSwipeLeft()
-      x.set(0)
-    } else if (offsetX > threshold && onSwipeRight) {
-      onSwipeRight()
-      x.set(0)
-    } else {
-      animate(x, 0, { type: 'spring', stiffness: 300 })
-    }
   }
 
   // if (isFlipped) {

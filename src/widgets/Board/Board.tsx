@@ -13,8 +13,6 @@ export const Board = () => {
   const next = useGameStore((s) => s.nextCard)
   const prev = useGameStore((s) => s.prevCard)
 
-  const stack = deck.slice(currentIndex)
-
   const visibleStack = useMemo(
     () => deck.slice(currentIndex, currentIndex + VISIBLE_COUNT),
     [deck, currentIndex],
