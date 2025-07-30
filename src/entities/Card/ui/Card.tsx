@@ -7,8 +7,8 @@ import {
 } from 'framer-motion'
 
 import { CardT } from '@/entities/Card/model/types'
-import ComeCloserLogo from '@/shared/ui/icons/shapes.svg'
-import ComeCloserLogoBack from '@/shared/ui/icons/logoBack.svg'
+// import ComeCloserLogo from '@/shared/ui/icons/shapes.svg'
+// import ComeCloserLogoBack from '@/shared/ui/icons/logoBack.svg'
 import BackHand from '@/shared/ui/icons/hand.png'
 
 type CardProps = {
