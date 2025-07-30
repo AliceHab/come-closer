@@ -1,6 +1,6 @@
 // src/entities/Card/model/data.ts
 
-import { CardT } from './types'
+import { CardT } from '@/entities/Card/model/types'
 
 export const cards: CardT[] = [
   {
