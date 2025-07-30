@@ -1,4 +1,53 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@theme {
+  --color-coffebrake-accent: rgba(204, 97, 11, 1);
+  --color-coffebrake-bg: rgba(241, 227, 204, 1);
+  --color-coffebrake-light: rgba(219, 149, 88, 1);
+
+  --color-redrum-accent: rgba(254, 50, 13, 1);
+  --color-redrum-bg: rgba(251, 219, 208, 1);
+  --color-redrum-light: rgba(255, 111, 84, 1);
+
+  --color-malina-accent: rgba(253, 43, 96, 1);
+  --color-malina-bg: rgba(255, 225, 232, 1);
+  --color-malina-light: rgba(254, 116, 151, 1);
+
+  --color-purpur-accent: rgba(167, 60, 215, 1);
+  --color-purpur-bg: rgba(240, 220, 249, 1);
+  --color-purpur-light: rgba(196, 124, 228, 1);
+
+  --color-ocean-accent: rgba(115, 83, 240, 1);
+  --color-ocean-bg: rgba(225, 231, 255, 1);
+  --color-ocean-light: rgba(159, 142, 246, 1);
+
+  --color-mint-accent: rgba(53, 131, 125, 1);
+  --color-mint-bg: rgba(212, 236, 234, 1);
+  --color-mint-light: rgba(117, 173, 168, 1);
+}
+
+@layer utilities {
+  .bg-glass {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .noise-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../shared/ui/icons/noise.png');
+    opacity: 0.3;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    z-index: 1;
+  }
+}
 
 :root {
   --background: #ffffff;
@@ -23,4 +72,13 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+#gradient-canvas {
+  width: 100%;
+  height: 100%;
+  --gradient-color-1: #4d1e64;
+  --gradient-color-2: #ce6548;
+  --gradient-color-3: #34479b;
+  --gradient-color-4: #998332;
 }

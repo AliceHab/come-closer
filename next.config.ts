@@ -1,7 +1,19 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  experimental: {
+    turbo: {
+      rules: {
+        // Глобальный паттерн к вашим SVG
+        './src/shared/ui/icons/**/*.svg': {
+          // Интерпретировать файл как TSX, чтобы SVGR вернул JSX
+          as: '*.tsx',
+          // Подключить SVGR‑лоадер
+          loaders: [require.resolve('@svgr/webpack')],
+        },
+      },
+    },
+  },
+}
 
-export default nextConfig;
+module.exports = nextConfig
