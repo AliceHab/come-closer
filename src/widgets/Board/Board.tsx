@@ -1,5 +1,3 @@
-'use client'
-
 import { Card } from '@/entities/Card'
 import { useGameStore } from '@/shared/store/gameStore'
 import { SwitchBtn } from '@/shared/ui/SwitchBtn/SwitchBtn'
