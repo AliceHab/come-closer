@@ -6,7 +6,7 @@
 [![Next.js](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 [![Zustand](https://img.shields.io/badge/zustand-602c3c?style=for-the-badge)](https://zustand-demo.pmnd.rs/)
 
-<img width="1052" height="843" alt="image" src="https://github.com/user-attachments/assets/24a6d7a2-c45d-4a8d-8603-86ca99909971" />
+<img width="1227" height="830" alt="image" src="https://github.com/user-attachments/assets/c61cd692-4799-422d-bc04-61583b11c761" />
 > Демо-версия
 
 
