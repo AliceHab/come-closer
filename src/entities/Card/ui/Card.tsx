@@ -107,14 +107,24 @@ export const Card = ({
 
   return (
     <motion.div
-      className={`${classes.container}  top-0 left-0 py-11 px-10 rounded-2xl shadow-md w-full h-full flex flex-col justify-between items-center noise-overlay relative`}
+      className={`top-0 left-0 py-11 px-10 rounded-2xl 
+        w-full h-full flex flex-col 
+        justify-between items-center noise-overlay relative cursor-grab
+        shadow-[0_15px_30px_rgba(0,0,0,0.2),inset_0_1px_2px_rgba(255,255,255,0.2)]
+        ${classes.container}`}
       drag="x"
       dragConstraints={{ left: 0, right: 0 }}
       dragElastic={0.2}
       onDragEnd={handleDragEnd}
       whileTap={{ cursor: 'grabbing' }}
+      whileHover={{
+        scale: 1.015,
+        rotateX: -4,
+        rotateY: 4,
+      }}
+      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-      style={{ zIndex: stackSize, x, rotate }}
+      style={{ zIndex: stackSize, x, rotate, perspective: 1000 }}
     >
       <p className={`${classes.text} italic text-[20px]`}>{theme}</p>
       <p className={`${classes.text} text-2xl text-center`}>

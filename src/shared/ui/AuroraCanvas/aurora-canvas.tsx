@@ -122,7 +122,7 @@ export function AuroraCanvas({
           particle.y,
           particle.size,
         )
-        gradient.addColorStop(0, `${particle.color}20`)
+        gradient.addColorStop(0, `${particle.color}15`)
         gradient.addColorStop(1, `${particle.color}00`)
         ctx.fillStyle = gradient
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)

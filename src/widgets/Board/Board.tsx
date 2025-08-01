@@ -18,7 +18,7 @@ export const Board = () => {
 
   return (
     <div className="flex items-center">
-      <SwitchBtn className="mr-5 rotate-180" onClick={prev} />
+      <SwitchBtn className="mr-9 rotate-180" onClick={prev} />
       <div className="board relative w-[330px] h-[515px]">
         {/* {prevCard && <Card card={prevCard} isFlipped={true} />} */}
         {visibleStack.map((c, idx) => (
@@ -33,7 +33,7 @@ export const Board = () => {
         ))}
         {/* {nextCard && <Card card={nextCard} isFlipped={true} />} */}
       </div>
-      <SwitchBtn className="ml-5" onClick={next} />
+      <SwitchBtn className="ml-9" onClick={next} />
     </div>
   )
 }

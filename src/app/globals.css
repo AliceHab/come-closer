@@ -42,7 +42,7 @@
     position: absolute;
     inset: 0;
     background-image: url('../shared/ui/icons/noise.png');
-    opacity: 0.3;
+    opacity: 0.2;
     pointer-events: none;
     mix-blend-mode: multiply;
     z-index: 1;
